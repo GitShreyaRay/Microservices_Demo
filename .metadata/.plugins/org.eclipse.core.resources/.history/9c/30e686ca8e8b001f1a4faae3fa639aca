@@ -1,0 +1,71 @@
+package com.nice.repo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.nice.model.Employee;
+
+import jakarta.xml.bind.annotation.XmlElement;
+
+@Repository
+public class EmployeeDAO {
+	
+	List<Employee> empList = new ArrayList<Employee>();
+
+	
+	Employee e1 = new Employee();
+	e1 employee=new Employee();
+	e1.setEmployeeID(0);
+	e1.setEmployeeName("No Emp found");
+	e1.setEmployeeAddress("None");
+	
+	
+	public Employee addEmployee(Employee e) {
+		empList.add(e);
+		return e;
+	}
+	
+	@XmlElement
+	public Employee getEmployee(int id) {
+
+		for(Employee e : empList) {
+			if(e.getEmployeeID() == id)
+				return e;
+		}
+		
+		return e1;
+	}
+	
+	public List<Employee> getAllEmployee() {
+		if(null == empList)
+		System.out.println("Size is empty");
+		Employee employee=new Employee();
+		employee.setEmployeeID(10);
+		employee.setEmployeeName("Shreya");
+		employee.setEmployeeAddress("Pune");
+		empList.add(employee);
+		return empList;
+	}
+	
+	public Employee deleteEmployee(int id) {
+		for(Employee e : empList) {
+			if(e.getEmployeeID() == id)
+				empList.remove(e);
+				return e;
+		}
+		return e1;
+	}
+	
+public Employee updateEmployee(Employee emp) {
+	for(Employee e : empList) {
+		if(e.getEmployeeID() == emp.getEmployeeID())
+			e.setEmployeeName(emp.getEmployeeName());
+		e.setEmployeeAddress(emp.getEmployeeAddress());
+			return e;
+	}
+	return e1;
+	}
+
+}

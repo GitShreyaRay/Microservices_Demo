@@ -1,0 +1,23 @@
+package com.nice.rest;
+
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.nice.model.Employee;
+
+public class EmployeeController {
+
+	// GET Method Impl using the @Requestmapping impl
+	@RequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET, value = "/customerDetails")
+	public Employee employeeDetails() {
+		// data is harded coded data 
+		// get data from back :-- Collection // JDBCTemplate // JPA 
+		Employee employee=new Employee();
+		employee.setEmployeeID(101);
+		employee.setEmployeeName("Amy");
+		employee.setEmployeeAddress("DElhi");
+		return employee;
+	} 
+
+}

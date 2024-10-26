@@ -1,0 +1,43 @@
+package com.nice.repo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.nice.model.Employee;
+
+@Repository
+public class EmployeeDAO {
+	
+	List<Employee> empList = new ArrayList<Employee>();
+	
+	Employee e1 = null;
+	
+	public Employee addEmployee(Employee e) {
+		empList.add(e);
+		return e;
+	}
+	
+	public Employee getEmployee(int id) {
+		for(Employee e : empList) {
+			if(e.getEmployeeID() == id)
+				return e;
+		}
+		
+		return e1;
+	}
+	
+	public void getAllEmployee() {
+		
+	}
+	
+	public void deleteEmployee(int id) {
+		
+	}
+	
+public void updateEmployee(int id) {
+		
+	}
+
+}

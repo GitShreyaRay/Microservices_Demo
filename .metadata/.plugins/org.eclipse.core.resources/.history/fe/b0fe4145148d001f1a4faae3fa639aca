@@ -1,0 +1,19 @@
+package com.nice.repository;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.nice.entity.Student;
+
+import jakarta.annotation.PostConstruct;
+
+public class StudentRepository {
+	
+	private static final Map<String, Student> students = new HashMap<>();
+	 
+	@PostConstruct
+	public void initData() {
+	}
+
+
+}

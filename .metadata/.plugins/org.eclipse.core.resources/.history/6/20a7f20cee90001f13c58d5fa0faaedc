@@ -1,0 +1,10 @@
+package com.nice.app;
+
+public class Snippet {
+	server.error.include-stacktrace=never
+	server.error.include-message=always
+	eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka
+	server.port=8086
+	spring.cloud.compatibility-verifier.enabled=false
+}
+

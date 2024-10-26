@@ -1,0 +1,13 @@
+package com.nice.security;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class NiceCloudSpringSecurity1Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(NiceCloudSpringSecurity1Application.class, args);
+	}
+
+}

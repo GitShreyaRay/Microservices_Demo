@@ -1,0 +1,5 @@
+package com.nice.bean;
+
+public class Customer {
+
+}

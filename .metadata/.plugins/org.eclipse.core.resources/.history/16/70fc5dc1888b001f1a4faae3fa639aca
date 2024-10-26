@@ -1,0 +1,46 @@
+package com.nice.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nice.model.Employee;
+import com.nice.repo.EmployeeDAO;
+
+@RestController
+public class EmployeeController {
+	
+	@Autowired
+	EmployeeDAO empDAO;
+
+	// GET Method Impl using the @Requestmapping impl
+	//All the annotations get, post, put and delete are concised inside the request mapping annotation
+	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE, value = "/employeeDetails/{id}")
+	public Employee employeeDetails(@PathVariable int id) {
+		// data is hard coded data 
+		// get data from back :-- Collection // JDBCTemplate // JPA 
+		Employee employee=new Employee();
+		employee.setEmployeeID(1);
+		employee.setEmployeeName("Shreya");
+		employee.setEmployeeAddress("Pune");
+		Employee employee= empDAO.getEmployee(id);
+		return employee;
+	}
+	
+	// GET Method Impl using the @Requestmapping impl
+	//All the annotations get, post, put and delete are concised inside the request mapping annotation
+	@PostMapping(consumes = MediaType.APPLICATION_XML_VALUE, value = "/createEmployee")
+	public Employee createEmployee(@RequestBody Employee emp) {
+		// data is hard coded data 
+		// get data from back :-- Collection // JDBCTemplate // JPA 
+		
+		empDAO.getEmployee(id);
+		
+		return employee;
+	}
+
+}

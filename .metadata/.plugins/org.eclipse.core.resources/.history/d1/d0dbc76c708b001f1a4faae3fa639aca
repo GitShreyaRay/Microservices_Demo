@@ -1,0 +1,41 @@
+package com.nice.repository;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.util.Assert;
+
+import io.spring.guides.gs_producing_web_service.Employee;
+
+import jakarta.annotation.PostConstruct;
+
+public class EmployeeRepository {
+	private static final Map<String, Employee> employees = new HashMap<>();
+
+	@PostConstruct
+	public void initData() {
+		Employee emp1 = new Employee();
+		emp1.setId(1);
+		emp1.setName("Emp1");
+		emp1.setAddress("Address1");
+
+		employees.put(emp1.getName(), emp1);
+
+		Employee emp2 = new Employee();
+		emp2.setId(2);
+		emp2.setName("Emp2");
+		emp2.setAddress("Address2");
+
+		employees.put(emp1.getName(), emp2);
+
+
+	}
+
+	//Later other method is required inside the repo
+	public Country findEmployee(int id) {
+		Assert.notNull(id, "The country's name must not be null");
+		return employees.get(id);
+	}
+
+}
+

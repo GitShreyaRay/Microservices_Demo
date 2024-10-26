@@ -1,0 +1,38 @@
+package com.nice.rest;
+
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nice.model.Employee;
+
+@RestController
+public class EmployeeController {
+
+	// GET Method Impl using the @Requestmapping impl
+	//All the annotations get, post, put and delete are concised inside the request mapping annotation
+	@GetMapping(produces = MediaType.APPLICATION_XML_VALUE, value = "/employeeDetails")
+	public Employee employeeDetails() {
+		// data is hard coded data 
+		// get data from back :-- Collection // JDBCTemplate // JPA 
+		Employee employee=new Employee();
+		employee.setEmployeeID(101);
+		employee.setEmployeeName("Amy");
+		employee.setEmployeeAddress("Delhi");
+		return employee;
+	}
+	
+	// GET Method Impl using the @Requestmapping impl
+	//All the annotations get, post, put and delete are concised inside the request mapping annotation
+	@PostMapping(consumes = MediaType.APPLICATION_XML_VALUE, value = "/createEmployee")
+	public Employee createEmployee() {
+		// data is hard coded data 
+		// get data from back :-- Collection // JDBCTemplate // JPA 
+		Employee employee=new Employee();
+		employee.setEmployeeID(101);
+		employee.setEmployeeName("Amy");
+		employee.setEmployeeAddress("Delhi");
+		return employee;
+	}
+
+}

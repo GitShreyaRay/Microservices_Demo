@@ -1,0 +1,29 @@
+package com.nice.restcontroller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.nice.entity.Student;
+import com.nice.repository.StudentRepository;
+
+
+
+@RestController
+@RequestMapping("/crs/students")
+public class StudentController {
+	
+	@Autowired
+	private final StudentRepository studentRepository;
+	
+	 @GetMapping  // request mapping  change 
+	    public List<Student> getAllStudents() {
+	    	log.info("Inside get all books.");
+	        return studentRepository.findAll();
+	    }
+	
+
+}

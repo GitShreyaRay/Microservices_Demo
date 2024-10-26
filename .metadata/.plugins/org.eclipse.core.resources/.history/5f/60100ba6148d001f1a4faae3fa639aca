@@ -1,0 +1,17 @@
+package com.nice.repository;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.nice.entity.Student;
+
+import jakarta.annotation.PostConstruct;
+
+public interface StudentRepository extends JpaRepository<Student, Long>{
+	
+	
+
+
+}

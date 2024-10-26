@@ -1,0 +1,36 @@
+package com.nice.model;
+
+public class Employee {
+	
+	private int employeeID;
+	private String custyomerName;
+	private String custoemrAddress;
+	
+	
+	public int getCustomerID() {
+		return employeeID;
+	}
+	public void setCustomerID(int customerID) {
+		this.employeeID = customerID;
+	}
+	public String getCustyomerName() {
+		return custyomerName;
+	}
+	public void setCustyomerName(String custyomerName) {
+		this.custyomerName = custyomerName;
+	}
+	public String getCustoemrAddress() {
+		return custoemrAddress;
+	}
+	public void setCustoemrAddress(String custoemrAddress) {
+		this.custoemrAddress = custoemrAddress;
+	}
+	@Override
+	public String toString() {
+		return "Customer [customerID=" + employeeID + ", custyomerName=" + custyomerName + ", custoemrAddress="
+				+ custoemrAddress + "]";
+	}
+	
+	
+
+}
